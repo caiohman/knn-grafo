@@ -1,6 +1,7 @@
 import pygame
 import os
 from iaButton import IaButton
+from knnGraph import KnnGraph
 
 #
 #
@@ -39,7 +40,6 @@ def configScreen():
     buttons.append(IaButton(scr, 'Busca Best First', 2))
     buttons.append(IaButton(scr, 'Agoritmo A', 3))
     buttons.append(IaButton(scr, 'Algoritmo A*', 4))
-
     
     pygame.display.flip()
 
@@ -59,13 +59,12 @@ def game_loop():
             if event.type == pGame.QUIT:
                 running = False
             
+            # buttons event listeners
             buttons[0].button.listen(event)
             buttons[1].button.listen(event)
             buttons[2].button.listen(event)
             buttons[3].button.listen(event)
             buttons[4].button.listen(event)
-
-
 
 #
 #
